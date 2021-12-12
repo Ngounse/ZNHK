@@ -23,9 +23,9 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="./spotify" className={styles.card}>
+            <h2>Spotify &rarr;</h2>
+            <p>Find in-depth information about spotify features and API.</p>
           </a>
 
           <a href="" className={styles.card}>
