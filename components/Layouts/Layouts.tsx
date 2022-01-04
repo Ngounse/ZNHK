@@ -10,13 +10,17 @@ const Layouts = React.memo((props: IProps) => {
     <main>
       <StyleLayoutWrapper id="id-layout">
         <SideBar></SideBar>
-        {props.children}
+        <StyledContainer>{props.children}</StyledContainer>
       </StyleLayoutWrapper>
     </main>
   );
 });
 const StyleLayoutWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex: 1;
+  flex-direction: row; */
+`;
+const StyledContainer = styled.div`
+  padding-left: 200px;
 `;
 export default Layouts;

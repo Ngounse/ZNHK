@@ -1,5 +1,5 @@
 import Layouts from "../../components/Layouts";
-import Charts from "../../src/components/Charts";
+import Charts from "../../src/Charts";
 
 const ChartPage = () => {
   return (
