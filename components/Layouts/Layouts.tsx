@@ -7,20 +7,20 @@ interface IProps {
 }
 const Layouts = React.memo((props: IProps) => {
   return (
-    <main>
-      <StyledContainer id="id-layout">
-        <SideBar></SideBar>
-        <div>{props.children}</div>
-      </StyledContainer>
-    </main>
+    <StyleLayoutWrapper id="id-layout">
+      <SideBar></SideBar>
+      <StyledContent>{props.children}</StyledContent>
+    </StyleLayoutWrapper>
   );
 });
 const StyleLayoutWrapper = styled.div`
-  /* display: flex;
-  flex: 1;
-  flex-direction: row; */
+  display: flex;
+  height: 100%;
+  width: 100%;
 `;
-const StyledContainer = styled.div`
-  padding-left: 200px;
+const StyledContent = styled.div`
+  padding: 0 16px;
+  width: calc(100vw - var(--sidebar_w));
 `;
+
 export default Layouts;

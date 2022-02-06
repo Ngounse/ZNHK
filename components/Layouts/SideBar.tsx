@@ -4,23 +4,17 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import HomeIcon from "@mui/icons-material/Home";
-import FlashOnIcon from "@mui/icons-material/FlashOn";
-import LoyaltyIcon from "@mui/icons-material/Loyalty";
-import LightbulbIcon from "@mui/icons-material/Lightbulb";
-import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import PersonIcon from "@mui/icons-material/Person";
-
-import { MENUS } from "./utils";
+import { MENUS, checkCurrentPage } from "./utils";
 import Header from "./Header";
 import { useRouter } from "next/router";
+import styled from "styled-components";
 
+const SIDE_BAR_W = 290;
 const SideBar = React.memo(() => {
   const router = useRouter();
-  const handleClick = (page: string) => {
-    router?.push(`/spotify/${page}`);
-    console.log("page::", page);
+  console.log();
+  const handleClick = (item: any) => {
+    router.push(`/spotify${item.url}`);
   };
   return (
     <Drawer
@@ -31,10 +25,10 @@ const SideBar = React.memo(() => {
         keepMounted: true,
       }}
       sx={{
-        width: 200,
+        width: SIDE_BAR_W,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: 200,
+          width: SIDE_BAR_W,
           boxSizing: "border-box",
         },
       }}
@@ -42,28 +36,33 @@ const SideBar = React.memo(() => {
       <div>
         <Header />
         <List>
-          {MENUS.map((menu: any, index: number) => (
-            <ListItem
-              onClick={() => handleClick(menu.value)}
-              selected={menu.value === "chartxs"}
-              button
-              key={index}
-            >
-              <ListItemIcon>
-                {menu.icon === "HomeIcon" && <HomeIcon />}
-                {menu.icon === "FlashOnIcon" && <FlashOnIcon />}
-                {menu.icon === "LoyaltyIcon" && <LoyaltyIcon />}
-                {menu.icon === "LightbulbIcon" && <LightbulbIcon />}
-                {menu.icon === "PlaylistPlayIcon" && <PlaylistPlayIcon />}
-                {menu.icon === "FavoriteIcon" && <FavoriteIcon />}
-                {menu.icon === "PersonIcon" && <PersonIcon />}
-              </ListItemIcon>
-              <ListItemText primary={menu.label} />
-            </ListItem>
-          ))}
+          {MENUS.map((menu: any, index: number) => {
+            const isSelected = checkCurrentPage(menu.url, router?.pathname);
+            // console.log(isSelected);
+            // console.log(menu.url);
+            return (
+              <StyledListItem
+                onClick={() => handleClick(menu)}
+                selected={isSelected}
+                key={index}
+              >
+                <ListItemIcon>{menu.icon}</ListItemIcon>
+                <ListItemText primary={menu.label} />
+              </StyledListItem>
+            );
+          })}
         </List>
       </div>
     </Drawer>
   );
 });
+
+const StyledListItem = styled(ListItem)`
+  opacity: 0.7;
+  cursor: pointer;
+  &.Mui-selected {
+    opacity: 1;
+    background-color: transparent;
+  }
+`;
 export default SideBar;
