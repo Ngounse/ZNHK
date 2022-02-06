@@ -10,19 +10,22 @@ interface IProps {
   title: any;
   artist: any;
 }
-export const Cover = React.memo((props: IProps) => {
+const Cover = React.memo((props: IProps) => {
   const { src, alt, title, artist } = props;
   return (
-    <StyledBody>
+    <div>
       <Card sx={{ minWidth: "100%" }}>
         <img src={`${src}`} srcSet={`${src}`} alt={alt} loading="lazy" />
         <CardContent>
-          <Typography className="mouse-pointer" variant="body2">
+          <Typography
+            // className="mouse-pointer"
+            variant="subtitle2"
+          >
             {title}
           </Typography>
           <Typography
-            className="mouse-pointer"
-            sx={{ fontSize: 14 }}
+            // className="mouse-pointer"
+            // sx={{ fontSize: 14 }}
             color="text.secondary"
             gutterBottom
           >
@@ -30,7 +33,7 @@ export const Cover = React.memo((props: IProps) => {
           </Typography>
         </CardContent>
       </Card>
-    </StyledBody>
+    </div>
   );
 });
 
@@ -41,9 +44,9 @@ const StyledBody = styled.div`
     /* height: calc(10px + 100px); */
     object-fit: cover;
   }
-  .mouse-pointer {
+  /* .mouse-pointer {
     cursor: pointer;
-  }
+  } */
 `;
 
-// export default Cover;
+export default Cover;

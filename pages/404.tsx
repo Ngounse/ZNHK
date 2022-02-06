@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="." className={styles.card}>
+          <a href="/" className={styles.card}>
             <h2>Spotify &rarr;</h2>
             <p>Find in-depth information about spotify features and API.</p>
           </a>

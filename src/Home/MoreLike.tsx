@@ -1,40 +1,39 @@
 import React from "react";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Divider } from "@mui/material";
 import styled from "styled-components";
-import Cover from "../../components/Cover";
+import AvatarProfile from "../../components/Avatar";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { arr_album } from "./utils";
+import { arr_avatar } from "./utils";
 
-const NewRelease = React.memo(() => {
+const MoreLike = React.memo(() => {
   return (
     <>
       {/* <StyledHeader> */}
-      {/* <div> */}
-      <p className="description">New</p>
-      <h3 className="title">Releases</h3>
-      {/* </div> */}
+      <div>
+        <p className="description">Recommendation</p>
+        <h3 className="title">More Like</h3>
+      </div>
       <div>
         <Button endIcon={<ArrowForwardIcon />}>see all</Button>
       </div>
       {/* </StyledHeader> */}
       <Grid container spacing={2}>
-        {arr_album.map((item: any, index: number) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
-            <Cover
+        {arr_avatar.map((item: any, index: number) => (
+          <Grid item md={2} key={index}>
+            <AvatarProfile
               src={item.cover}
-              title={item.title}
               alt={item.title}
               artist={item.artist}
             />
           </Grid>
         ))}
       </Grid>
+      <Divider />
     </>
   );
 });
 const StyledHeader = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 30px;
@@ -48,4 +47,4 @@ const StyledHeader = styled.div`
   }
 `;
 
-export default NewRelease;
+export default MoreLike;

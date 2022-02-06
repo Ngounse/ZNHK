@@ -14,7 +14,7 @@ const Header = React.memo(() => {
       alignItems="center"
       justifyContent="space-between"
     >
-      <StyledLogo variant="h5">Spotify</StyledLogo>
+      <Typography variant="h5">Spotify</Typography>
       <IconButton>
         <SearchIcon />
       </IconButton>
@@ -22,7 +22,7 @@ const Header = React.memo(() => {
   );
 });
 const StyledLogo = styled(Typography)`
-  font-weight: 700;
+  /* font-weight: 700; */
 `;
 
 export default Header;

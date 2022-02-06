@@ -8,10 +8,10 @@ interface IProps {
 const Layouts = React.memo((props: IProps) => {
   return (
     <main>
-      <StyleLayoutWrapper id="id-layout">
+      <StyledContainer id="id-layout">
         <SideBar></SideBar>
-        <StyledContainer>{props.children}</StyledContainer>
-      </StyleLayoutWrapper>
+        <div>{props.children}</div>
+      </StyledContainer>
     </main>
   );
 });
