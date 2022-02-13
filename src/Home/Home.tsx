@@ -3,6 +3,7 @@ import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
 
 import NewReleases from "./NewRelease";
+import Recommendation from "./Recommendation";
 import Track from "./Track";
 import Discover from "./Discover";
 import styled from "styled-components";
@@ -18,10 +19,15 @@ const Home = React.memo(() => {
         flexDirection="row"
       >
         <Track title="Global Top 50" subtitle="Hot Track" />
+        <Stack sx={{ p: 4 }} />
         <Discover title={`Genres & Moods`} subtitle="Discover" />
       </Stack>
       <Divider sx={{ marginTop: 5, marginBottom: 5 }} />
       <NewReleases title="Featured Playlists" subtitle="Pilihan Editor" />
+      <Recommendation
+        title="More Like ChaconneScott"
+        subtitle="Recommendation"
+      />
     </StyledWrapper>
   );
 });

@@ -16,9 +16,15 @@ const AvatarProfile = React.memo((props: IProps) => {
   return (
     <div id="avatar">
       <Stack direction="row" spacing={2}>
-        <Avatar alt={alt} src={src} sx={{ width: 200, height: 200 }} />
+        <Avatar
+          alt={alt}
+          src={src}
+          sx={{ width: 200, height: 200, boxShadow: 4 }}
+        />
       </Stack>
-      <Typography variant="subtitle2">{artist}</Typography>
+      <Stack alignItems="center" sx={{ pt: 1 }}>
+        <Typography variant="subtitle2">{artist}</Typography>
+      </Stack>
     </div>
   );
 });
