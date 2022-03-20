@@ -32,13 +32,7 @@ const Discover = React.memo((props: IProps) => {
         {showSeeAll && <Button endIcon={<ArrowForwardIcon />}>see all</Button>}
       </Stack>
       <Stack direction="row" spacing={2} sx={{ overflow: "auto", width: 730 }}>
-        <ImageList cols={2}>
-          {range(0, 50).map((item, i) => (
-            <ImageListItem key={i} rows={1} sx={{ pr: 2, pt: 2 }}>
-              <GenresMoods title={"title" + item} />
-            </ImageListItem>
-          ))}
-        </ImageList>
+        <GenresMoods title={"title"} />
       </Stack>
     </StyledWrapper>
   );

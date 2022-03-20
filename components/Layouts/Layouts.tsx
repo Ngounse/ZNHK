@@ -1,5 +1,7 @@
 import React from "react";
+import { Stack } from "@mui/material";
 import SideBar from "./SideBar";
+import Playing from "components/Playing";
 import styled from "styled-components";
 
 interface IProps {
@@ -8,8 +10,12 @@ interface IProps {
 const Layouts = React.memo((props: IProps) => {
   return (
     <StyleLayoutWrapper id="id-layout">
-      <SideBar></SideBar>
-      <StyledContent>{props.children}</StyledContent>
+      <Stack className="content-layout" direction="row">
+        <SideBar></SideBar>
+        <StyledContent>{props.children}</StyledContent>
+      </Stack>
+
+      <Playing />
     </StyleLayoutWrapper>
   );
 });
