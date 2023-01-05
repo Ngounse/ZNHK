@@ -5,6 +5,7 @@ import Home from "src/Home";
 const HomePage: NextPage = () => {
   return (
     <Layouts>
+      <title>Spotify</title>
       <Home />
     </Layouts>
   );

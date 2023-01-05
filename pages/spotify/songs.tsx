@@ -4,7 +4,7 @@ import Songs from "src/Songs";
 const SongsPage = () => {
   return (
     <Layouts>
-      <title>SongsPage</title>
+      <title>Songs</title>
       <Songs />
     </Layouts>
   );
