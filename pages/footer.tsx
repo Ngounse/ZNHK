@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { NextPage } from "next";
 
-export const Footer = React.memo(() => {
+const Footer: NextPage = React.memo(() => {
   return (
     <footer className={styles.footer}>
       <a href="" target="_blank" rel="noopener noreferrer">
@@ -14,3 +15,5 @@ export const Footer = React.memo(() => {
     </footer>
   );
 });
+
+export default Footer;

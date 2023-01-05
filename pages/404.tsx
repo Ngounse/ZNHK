@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { Footer } from "pages/footer";
+import Footer from "pages/footer";
 
 const Home: NextPage = () => {
   const router = useRouter();

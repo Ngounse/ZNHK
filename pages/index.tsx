@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { menuHome } from "src/utils";
-import { Footer } from "pages/footer";
+import Footer from "pages/footer";
 
 const Home: NextPage = React.memo(() => {
   return (
